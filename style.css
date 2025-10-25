@@ -1,3 +1,80 @@
 body {
-    background-color: rgb(167, 167, 222)
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+    margin: 0;
+    background-image: url(images/field-illustration.jpeg);
+    height: 100vh;
+    width: 100%;
+    background-size: cover;       
+    background-repeat: no-repeat; 
+    background-position: center;  
+   
+}
+#flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+#instr {
+    width: 50%;
+    padding: 30px 50px;
+    margin: 10px;
+    text-align: center;
+    background-color: rgba(143, 93, 0, 0.808);
+    color: white;
+    font-size: 20px;
+     border-radius: 15px;
+     letter-spacing: 1px;
+     line-height: 25px;
+}
+
+.item {
+    flex: 1;
+}
+
+
+
+#title {
+    font-size: 100px;
+    text-align: center;
+    height: 40px;
+    color: rgb(0, 109, 0);
+   
+}
+
+#startbtn {
+    margin: 30px;
+    padding: 15px 40px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color: rgb(0, 109, 0);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgba(143, 93, 0, 0.808);
+}
+
+#startbtn:hover {background-color: rgb(0, 80, 0);}
+
+#startbtn:active {
+    background-color: rgb(0, 80, 0);
+    box-shadow: 0 9px rgba(104, 68, 0, 0.808);
+    transform: translateY(4px);
 }
