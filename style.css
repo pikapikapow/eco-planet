@@ -9,6 +9,15 @@ p {
     padding: 0;
 }
 
+
+a {
+    text-decoration: none;
+}
+
+#startbtn a {
+    color: white;
+}
+
 #app, #lvl1, #lvl2 {
     margin: 0;
     background-image: url(images/field-illustration.jpeg);
@@ -30,34 +39,28 @@ p {
 #flex {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
-#container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    width: 100%;
-}
 
-#instr {
-    width: 50%;
+
+#instr p {
+    margin: 20px;
+    width: 46em;
     padding: 30px 50px;
-    margin: 10px;
     text-align: center;
     background-color: rgba(143, 93, 0, 0.808);
     color: white;
     font-size: 20px;
-     border-radius: 15px;
-     letter-spacing: 1px;
-     line-height: 25px;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    line-height: 25px;
 }
 
 .item {
     flex: 1;
+
 }
 
 
