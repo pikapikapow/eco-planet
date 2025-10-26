@@ -12,6 +12,12 @@ let num2;
 let op;
 let completeCheck = true;
 
+function generateTrash() {
+  newFish.classList.add("fa", "fa-solid", "fa-fish");
+  newFish.style.fontSize = "70px";
+  newFish.style.color = "#ff9900ff";
+}
+
 function generateProblem() {
   if (completeCheck === true) {
     num1 = Math.floor(Math.random() * 100) + 1;
@@ -49,8 +55,19 @@ function checkAnswer() {
     const newFish = document.createElement("i");
     newFish.classList.add("fa", "fa-solid", "fa-fish");
     newFish.style.fontSize = "70px";
-    newFish.style.color = "#ff9900ff";
-    fishContain.appendChild(newFish);
+    let r = Math.random() * 255;
+    let g = Math.random() * 255;
+    let b = Math.random() * 255;
+    let rgbColorString = `rgb(${r}, ${g}, ${b})`;
+    newFish.style.color = rgbColorString;
+    newFish.style.position = "absolute";
+    const containerWidth = window.innerWidth * 0.8;
+    const containerHeight = window.innerHeight * 0.9;
+    const randomX = Math.floor(Math.random() * (containerWidth - 70));
+    const randomY = Math.floor(Math.random() * (containerHeight - 70));
+    newFish.style.left = randomX + "px";
+    newFish.style.top = randomY + "px";
+    document.body.appendChild(newFish);
     fish++;
     questionbtn1.innerHTML = `Next?`;
     completeCheck = true;
