@@ -1,5 +1,7 @@
 const questionbtn1 = document.getElementById("questionbtn1");
 const checkBtn = document.getElementById("checkBtn");
+const treeContain = document.getElementById("treeContainer");
+let trees = 0;
 let winSnd = new Audio("./sounds/cheersfx.mp3");
 let failSnd = new Audio("./sounds/failsfx.mp3");
 let correctAnswer;
@@ -28,6 +30,11 @@ function checkAnswer() {
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
     winSnd.play();
+    const newTree = document.createElement("i");
+    newTree.classList.add("fa", "fa-solid", "fa-tree");
+    newTree.style.fontSize = "40px";
+    newTree.style.color = "#0b5232ff";
+    treeContain.appendChild(newTree);
   } else {
     result.textContent = `Incorrect. The correct answer is ${correctAnswer}.`;
     failSnd.play();
