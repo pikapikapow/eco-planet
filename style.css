@@ -196,7 +196,7 @@ input:focus::placeholder {
     width: 80%;
 }
 #treeCount, #fishCount  {
-    z-index: 60;
+    z-index: 200;
     position: fixed;
     left: 35%;
     margin: 30px;

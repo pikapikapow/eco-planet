@@ -10,6 +10,32 @@ let correctAnswer;
 let num1;
 let num2;
 let op;
+let pollutionCounter = 0;
+
+function generatePollution() {
+  for (let i = 0; i < 50; i++) {
+    const newPollution = document.createElement("div");
+    newPollution.style.background = "#8b8b8bb4";
+    newPollution.classList.add("pollution");
+    newPollution.style.width = "70px";
+    newPollution.style.height = "70px";
+    newPollution.style.position = "absolute";
+    newPollution.style.borderRadius = "50%";
+    newPollution.style.border = "1px solid black";
+    const containerWidth = window.innerWidth * 0.8;
+    const containerHeight = window.innerHeight * 0.3;
+    const randomX = Math.floor(Math.random() * (containerWidth - 70));
+    const randomY = Math.floor(Math.random() * (containerHeight - 70));
+    newPollution.style.left = randomX + "px";
+    newPollution.style.top = randomY + "px";
+    pollutionCounter++;
+
+    document.body.appendChild(newPollution);
+  }
+}
+
+generatePollution();
+console.log(pollutionCounter);
 
 function generateProblem() {
   num1 = Math.floor(Math.random() * 100) + 1;
@@ -31,9 +57,23 @@ function checkAnswer() {
   checkBtn.style.display = "none";
   const userAnswer = Number(document.getElementById("answer").value);
   const result = document.getElementById("result");
+  const pollution = document.querySelectorAll(".pollution");
+
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
     winSnd.play();
+    let randomPollution = Math.floor(Math.random() * pollutionCounter);
+    let pollutionToDelete = pollution[randomPollution];
+    if (pollution.length === 0) {
+      alert("Congrats! All the pollution has disappeared!");
+    } else {
+      pollutionToDelete.style.background = "red";
+      setTimeout(() => {
+        pollutionToDelete.remove();
+        pollutionCounter -= 1;
+        console.log(pollutionCounter);
+      }, 1000);
+    }
     const newTree = document.createElement("i");
     newTree.classList.add("fa", "fa-solid", "fa-tree");
     newTree.style.fontSize = "40px";

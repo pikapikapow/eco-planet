@@ -13,8 +13,8 @@ let num2;
 let op;
 let completeCheck = true;
 
-function generateTrash() {
-  for (let i = 0; i <= 60; i++) {
+function generateTrashOcean() {
+  for (let i = 0; i < 60; i++) {
     const newTrash = document.createElement("i");
     newTrash.classList.add("fa", "fa-solid", "fa-bottle-water");
     newTrash.style.color = "#555555";
@@ -30,7 +30,7 @@ function generateTrash() {
   }
 }
 
-generateTrash();
+generateTrashOcean();
 
 function generateProblem() {
   if (completeCheck === true) {
@@ -70,7 +70,7 @@ function checkAnswer() {
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
     winSnd.play();
-    const randomTrash = Math.floor(Math.random() * 61);
+    const randomTrash = Math.floor(Math.random() * trash.length);
     let trashToDelete = trash[randomTrash];
     if (trash.length === 0) {
       alert("Congrats! All the trash has disappeared!");
