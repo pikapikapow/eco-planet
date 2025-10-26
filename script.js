@@ -12,14 +12,13 @@ let num2;
 let op;
 
 function generateProblem() {
-  num1 = Math.floor(Math.random() * 10) + 1;
-  num2 = Math.floor(Math.random() * 10) + 1;
-  const operators = ["+", "-", "*"];
+  num1 = Math.floor(Math.random() * 100) + 1;
+  num2 = Math.floor(Math.random() * 100) + 1;
+  const operators = ["+", "-"];
   op = operators[Math.floor(Math.random() * operators.length)];
   checkBtn.style.display = "block";
   if (op === "+") correctAnswer = num1 + num2;
   else if (op === "-") correctAnswer = num1 - num2;
-  else if (op === "*") correctAnswer = num1 * num2;
 
   document.getElementById(
     "questionbtn1"

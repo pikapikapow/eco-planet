@@ -32,9 +32,7 @@ a {
 
 
 #lvl2 {
-    
     background-image: url(images/ocean-illustration.jpeg);
-    
 }
 
 #flex {
@@ -98,7 +96,7 @@ a {
 
 /* Level 1 CSS -------------------------------------------------------------------------------------------------*/
 
-#lvl1 {
+#lvl1, #lvl2 {
     display: flex;
     align-items: start;
     justify-content: end;
@@ -178,8 +176,7 @@ input:focus::placeholder {
 #treeContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 2px;
- 
+    gap: 5px;
     position: fixed;
     height: 25%;
     width: 80%;
@@ -187,8 +184,12 @@ input:focus::placeholder {
     left: 0;
     z-index: 1;
     }
-
-#treeCount {
+#fishContainer {
+    height: 100%;
+    width: 80%;
+    gap: 50px;
+}
+#treeCount, #fishCount {
     margin: 10px;
     position: fixed;
     left: 40%;
