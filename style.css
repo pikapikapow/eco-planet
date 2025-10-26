@@ -13,7 +13,8 @@ p {
 
 a {
     text-decoration: none;
-    color: white
+    color: white;
+    z-index: 100;
 }
 
 
@@ -194,12 +195,20 @@ input:focus::placeholder {
     height: 100%;
     width: 80%;
 }
-#treeCount, #fishCount {
-    margin: 10px;
+#treeCount, #fishCount  {
+    z-index: 60;
     position: fixed;
-    left: 40%;
-    background-color: rgb(255, 255, 255);
-    padding: 25px;
+    left: 35%;
+    margin: 30px;
+    padding: 15px 40px;
+    font-size: 24px;
     text-align: center;
-    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color: rgb(0, 109, 0);
+    border: none;
+    border-radius: 15px;
 }
+
+

@@ -3,6 +3,7 @@ const checkBtn = document.getElementById("checkBtn");
 const fishContain = document.getElementById("fishContainer");
 const fishCounter = document.getElementById("fishCount");
 fishCounter.style.display = "none";
+let counter = 0;
 let fish = 0;
 let winSnd = new Audio("./sounds/cheersfx.mp3");
 let failSnd = new Audio("./sounds/failsfx.mp3");
@@ -62,9 +63,23 @@ function checkAnswer() {
   checkBtn.style.display = "none";
   const userAnswer = Number(document.getElementById("answer").value);
   const result = document.getElementById("result");
+  const trash = document.querySelectorAll(".fa-bottle-water");
+
+  console.log(trash);
+
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
     winSnd.play();
+    const randomTrash = Math.floor(Math.random() * 61);
+    let trashToDelete = trash[randomTrash];
+    if (trash.length === 0) {
+      alert("Congrats! All the trash has disappeared!");
+    } else {
+      trashToDelete.style.color = "red";
+      setTimeout(() => {
+        trashToDelete.remove();
+      }, 1000);
+    }
     const newFish = document.createElement("i");
     newFish.classList.add("fa", "fa-solid", "fa-fish");
     newFish.style.fontSize = "70px";
