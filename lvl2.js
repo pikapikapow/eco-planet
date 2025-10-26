@@ -66,6 +66,11 @@ function checkAnswer() {
   } else {
     fishCounter.innerHTML = `Woah! You have bred ${fish} fish!`;
   }
+  if (fish >= 100) {
+    window.alert(
+      "You have beaten this level! You can choose to go on, or do the next level!"
+    );
+  }
 }
 
 document

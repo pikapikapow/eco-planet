@@ -52,6 +52,11 @@ function checkAnswer() {
   } else {
     treeCounter.innerHTML = `Woah! You have planted ${trees} trees!`;
   }
+  if (trees >= 50) {
+    alert(
+      "You have beaten this level! You can choose to go on, or do the next level!"
+    );
+  }
 }
 
 document
