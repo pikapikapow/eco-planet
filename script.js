@@ -48,7 +48,11 @@ function checkAnswer() {
     questionbtn1.innerHTML = `Next?`;
   }
   treeCounter.style.display = "block";
-  treeCounter.innerHTML = `You have planted ${trees} trees so far!`;
+  if (trees === 1) {
+    treeCounter.innerHTML = `You have planted your first tree!`;
+  } else {
+    treeCounter.innerHTML = `Woah! You have planted ${trees} trees!`;
+  }
 }
 
 document
