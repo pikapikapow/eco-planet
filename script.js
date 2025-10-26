@@ -1,5 +1,7 @@
 const questionbtn1 = document.getElementById("questionbtn1");
 const checkBtn = document.getElementById("checkBtn");
+let winSnd = new Audio("./sounds/cheersfx.mp3");
+let failSnd = new Audio("./sounds/failsfx.mp3");
 let correctAnswer;
 
 function generateProblem() {
@@ -25,8 +27,10 @@ function checkAnswer() {
   const result = document.getElementById("result");
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
+    winSnd.play();
   } else {
     result.textContent = `Incorrect. The correct answer is ${correctAnswer}.`;
+    failSnd.play();
   }
 }
 
