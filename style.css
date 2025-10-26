@@ -31,7 +31,9 @@ a {
    
 }
 
-
+#app {
+    background-image: url(images/resizedriver-illustration.jpg);
+}
 
 #lvl2 {
     background-image: url(images/ocean-illustration.jpeg);
@@ -51,7 +53,7 @@ a {
     width: 46em;
     padding: 30px 50px;
     text-align: center;
-    background-color: rgba(143, 93, 0, 0.808);
+    background-color: rgb(143, 93, 0);
     color: white;
     font-size: 20px;
     border-radius: 15px;
