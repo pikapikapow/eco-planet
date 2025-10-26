@@ -1,4 +1,5 @@
 const questionbtn1 = document.getElementById("questionbtn1");
+const checkBtn = document.getElementById("checkBtn");
 let correctAnswer;
 
 function generateProblem() {
@@ -6,7 +7,7 @@ function generateProblem() {
   const num2 = Math.floor(Math.random() * 10) + 1;
   const operators = ["+", "-", "*"];
   const op = operators[Math.floor(Math.random() * operators.length)];
-
+  checkBtn.style.display = "block";
   if (op === "+") correctAnswer = num1 + num2;
   else if (op === "-") correctAnswer = num1 - num2;
   else if (op === "*") correctAnswer = num1 * num2;
@@ -19,14 +20,13 @@ function generateProblem() {
 }
 
 function checkAnswer() {
+  checkBtn.style.display = "none";
   const userAnswer = Number(document.getElementById("answer").value);
   const result = document.getElementById("result");
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
-    result.style.color = "green";
   } else {
     result.textContent = `Incorrect. The correct answer is ${correctAnswer}.`;
-    result.style.color = "red";
   }
 }
 

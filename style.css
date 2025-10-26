@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 p {
@@ -98,48 +99,78 @@ a {
 /* Level 1 CSS */
 
 #lvl1 {
-    position: relative;
-   
+    display: flex;
+    align-items: start;
+    justify-content: end;
 }
+
+
+
+
+#question {
+     display: flex;
+     flex-direction: column;
+     width: 20%;
+     height: 100vh;
+    justify-content: end;
+}
+
+#questionbtn1, #checkBtn, #answer, #reply {
+    text-align: center;
+    flex: 1;
+    height: 33.3%;
+    margin: 0;
+    font-size: 20px;
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+    border-radius: 6px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height: 40px;
+
+}
+
+
+
+#answer {
+    background-image: none;
+    background-color: beige;
+    outline: none;
+    color: black;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+#reply {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* 
+#result {
+    
+} */
+
+/* ::placeholder {
+    color: #FFFFFF;
+} */
 
 #questionbtn1 {
-    margin: auto;
-    position: absolute;
-    bottom: 10px;
-    left: 33%;
-    text-align: center;
-    height: 100px;
-    width: 500px;
- 
-    border-radius: 2.5rem;
-  transition: 0.5s;
-  font-family: "Montserrat", sans-serif;
-  font-size: 2rem;
-  background-image: linear-gradient(
-    to right top,
-    #00e9d8,
-    #1eebd2,
-    #31eecb,
-    #42f0c4,
-    #51f2bc,
-    #5ff3b5,
-    #6cf5af,
-    #79f6a8,
-    #88f7a0,
-    #96f899,
-    #a4f992,
-    #b2f98b
-  );
-  color: white;
-  animation: blurr2 2s;
-  animation-iteration-count: infinite;
-  outline: none;
-  cursor: pointer;
-  border: none;
+    font-size: 40px;
 }
 
-
-
-
-
+#checkBtn {
+    width: 100%;
+    height: 100%;
+}
+/* #result {
+    height: 100%;
+    width: 100%;
+} */
 
