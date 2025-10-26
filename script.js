@@ -1,16 +1,21 @@
 const questionbtn1 = document.getElementById("questionbtn1");
 const checkBtn = document.getElementById("checkBtn");
 const treeContain = document.getElementById("treeContainer");
+const treeCounter = document.getElementById("treeCount");
+treeCounter.style.display = "none";
 let trees = 0;
 let winSnd = new Audio("./sounds/cheersfx.mp3");
 let failSnd = new Audio("./sounds/failsfx.mp3");
 let correctAnswer;
+let num1;
+let num2;
+let op;
 
 function generateProblem() {
-  const num1 = Math.floor(Math.random() * 10) + 1;
-  const num2 = Math.floor(Math.random() * 10) + 1;
+  num1 = Math.floor(Math.random() * 10) + 1;
+  num2 = Math.floor(Math.random() * 10) + 1;
   const operators = ["+", "-", "*"];
-  const op = operators[Math.floor(Math.random() * operators.length)];
+  op = operators[Math.floor(Math.random() * operators.length)];
   checkBtn.style.display = "block";
   if (op === "+") correctAnswer = num1 + num2;
   else if (op === "-") correctAnswer = num1 - num2;
@@ -35,10 +40,15 @@ function checkAnswer() {
     newTree.style.fontSize = "40px";
     newTree.style.color = "#0b5232ff";
     treeContain.appendChild(newTree);
+    trees++;
+    questionbtn1.innerHTML = `Next?`;
   } else {
-    result.textContent = `Incorrect. The correct answer is ${correctAnswer}.`;
+    result.innerHTML = `Incorrect. <br> ${num1} ${op} ${num2} equals ${correctAnswer}.`;
     failSnd.play();
+    questionbtn1.innerHTML = `Next?`;
   }
+  treeCounter.style.display = "block";
+  treeCounter.innerHTML = `You have planted ${trees} trees so far!`;
 }
 
 document
