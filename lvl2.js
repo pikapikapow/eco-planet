@@ -13,10 +13,23 @@ let op;
 let completeCheck = true;
 
 function generateTrash() {
-  newFish.classList.add("fa", "fa-solid", "fa-fish");
-  newFish.style.fontSize = "70px";
-  newFish.style.color = "#ff9900ff";
+  for (let i = 0; i <= 60; i++) {
+    const newTrash = document.createElement("i");
+    newTrash.classList.add("fa", "fa-solid", "fa-bottle-water");
+    newTrash.style.color = "#555555";
+    newTrash.style.fontSize = "30px";
+    newTrash.style.position = "absolute";
+    const containerWidth = window.innerWidth * 0.8;
+    const containerHeight = window.innerHeight * 0.3;
+    const randomX = Math.floor(Math.random() * (containerWidth - 70));
+    const randomY = Math.floor(Math.random() * (containerHeight - 70));
+    newTrash.style.left = randomX + "px";
+    newTrash.style.bottom = randomY + "px";
+    document.body.appendChild(newTrash);
+  }
 }
+
+generateTrash();
 
 function generateProblem() {
   if (completeCheck === true) {
@@ -62,7 +75,7 @@ function checkAnswer() {
     newFish.style.color = rgbColorString;
     newFish.style.position = "absolute";
     const containerWidth = window.innerWidth * 0.8;
-    const containerHeight = window.innerHeight * 0.9;
+    const containerHeight = window.innerHeight * 0.7;
     const randomX = Math.floor(Math.random() * (containerWidth - 70));
     const randomY = Math.floor(Math.random() * (containerHeight - 70));
     newFish.style.left = randomX + "px";
@@ -83,7 +96,7 @@ function checkAnswer() {
   } else {
     fishCounter.innerHTML = `Woah! You have bred ${fish} fish!`;
   }
-  if (fish >= 100) {
+  if (fish >= 60) {
     window.alert(
       "You have beaten this level! You can choose to go on, or do the next level!"
     );
