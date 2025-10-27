@@ -19,6 +19,10 @@ a {
     z-index: 100;
 }
 
+strong {
+    color: rgb(15, 206, 15);
+}
+
 
 #app, #lvl1, #lvl2 {
     margin: 0;
