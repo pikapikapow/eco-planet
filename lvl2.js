@@ -5,6 +5,7 @@ const fishCounter = document.getElementById("fishCount");
 fishCounter.style.display = "none";
 let counter = 0;
 let fish = 0;
+let lvl2Snd = new Audio("./sounds/ocean.mp3");
 let winSnd = new Audio("./sounds/cheersfx.mp3");
 let failSnd = new Audio("./sounds/failsfx.mp3");
 let correctAnswer;
@@ -12,6 +13,10 @@ let num1;
 let num2;
 let op;
 let completeCheck = true;
+
+window.onload = function () {
+  lvl2Snd.play();
+};
 
 function generateTrashOcean() {
   for (let i = 0; i < 60; i++) {

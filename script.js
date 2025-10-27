@@ -6,11 +6,17 @@ treeCounter.style.display = "none";
 let trees = 0;
 let winSnd = new Audio("./sounds/cheersfx.mp3");
 let failSnd = new Audio("./sounds/failsfx.mp3");
+let lvl1Snd = new Audio("./sounds/forest.mp3");
+
 let correctAnswer;
 let num1;
 let num2;
 let op;
 let pollutionCounter = 0;
+
+window.onload = function () {
+  lvl1Snd.play();
+};
 
 function generatePollution() {
   for (let i = 0; i < 50; i++) {
