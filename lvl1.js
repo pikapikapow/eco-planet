@@ -114,6 +114,9 @@ function generateProblem() {
   num2 = Math.floor(Math.random() * 100) + 1;
   const operators = ["+", "-"];
   op = operators[Math.floor(Math.random() * operators.length)];
+  if (op === "-" && num1 > num2) {
+    generateProblem();
+  }
   checkBtn.style.display = "block";
   if (op === "+") correctAnswer = num1 + num2;
   else if (op === "-") correctAnswer = num1 - num2;
