@@ -7,7 +7,7 @@ const close = document.getElementById("close2");
 const modal = document.getElementById("modal2");
 fishCounter.style.display = "none";
 let counter = 0;
-let fish = 58;
+let fish = 0;
 let lvl2Snd = new Audio("./sounds/ocean.mp3");
 let winSnd = new Audio("./sounds/cheersfx.mp3");
 let failSnd = new Audio("./sounds/failsfx.mp3");
@@ -97,7 +97,7 @@ function generateProblem() {
     num2 = Math.floor(Math.random() * 20) + 1;
     const operators = ["+", "-", "*", "/"];
     op = operators[Math.floor(Math.random() * operators.length)];
-    if (num1 > num2) {
+    if (num1 < num2) {
       generateProblem();
     }
 

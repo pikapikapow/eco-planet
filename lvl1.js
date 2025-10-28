@@ -6,7 +6,7 @@ const count = document.getElementById("countCorrect");
 const close = document.getElementById("close");
 const modal = document.getElementById("modal");
 treeCounter.style.display = "none";
-let trees = 49;
+let trees = 0;
 let counter = 0;
 let winSnd = new Audio("./sounds/cheersfx.mp3");
 let failSnd = new Audio("./sounds/failsfx.mp3");
@@ -114,7 +114,7 @@ function generateProblem() {
   num2 = Math.floor(Math.random() * 100) + 1;
   const operators = ["+", "-"];
   op = operators[Math.floor(Math.random() * operators.length)];
-  if (op === "-" && num1 > num2) {
+  if (op === "-" && num1 < num2) {
     generateProblem();
   }
   checkBtn.style.display = "block";
