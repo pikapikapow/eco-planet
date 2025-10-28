@@ -2,6 +2,7 @@ const questionbtn1 = document.getElementById("questionbtn1");
 const checkBtn = document.getElementById("checkBtn");
 const fishContain = document.getElementById("fishContainer");
 const fishCounter = document.getElementById("fishCount");
+const count = document.getElementById("countCorrect1");
 fishCounter.style.display = "none";
 let counter = 0;
 let fish = 0;
@@ -75,6 +76,8 @@ function checkAnswer() {
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
     winSnd.play();
+    counter++;
+    count.innerHTML = counter;
     const randomTrash = Math.floor(Math.random() * trash.length);
     let trashToDelete = trash[randomTrash];
     if (trash.length === 0) {

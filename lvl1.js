@@ -2,8 +2,10 @@ const questionbtn1 = document.getElementById("questionbtn1");
 const checkBtn = document.getElementById("checkBtn");
 const treeContain = document.getElementById("treeContainer");
 const treeCounter = document.getElementById("treeCount");
+const count = document.getElementById("countCorrect");
 treeCounter.style.display = "none";
 let trees = 0;
+let counter = 0;
 let winSnd = new Audio("./sounds/cheersfx.mp3");
 let failSnd = new Audio("./sounds/failsfx.mp3");
 let lvl1Snd = new Audio("./sounds/forest.mp3");
@@ -68,6 +70,8 @@ function checkAnswer() {
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
     winSnd.play();
+    counter++;
+    count.innerHTML = counter;
     let randomPollution = Math.floor(Math.random() * pollutionCounter);
     let pollutionToDelete = pollution[randomPollution];
     if (pollution.length === 0) {

@@ -118,6 +118,24 @@ strong {
 }
 
 
+#counter, #counter1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    position: absolute;
+    top: 30px;
+    right: 21%;
+    width: 50px;
+    height: 30px;
+    color: white;
+    background-color: rgb(0, 109, 0);
+    /* text-align: center; */
+    gap: 5px;
+    border-radius: 3px;
+    z-index: 169;
+}
+
 
 
 #question {
