@@ -26,17 +26,22 @@ strong {
 
 #app, #lvl1, #lvl2 {
     margin: 0;
-    background-image: url(images/field-illustration.jpeg);
-    height: 100%;
+    height: 100vh;
     width: 100%;
     background-size: cover;       
     background-repeat: no-repeat; 
-    background-position: center;  
+    background-position: center center;  
+  
    
+}
+
+#lvl1 {
+    background-image: url(images/field-illustration.jpeg);
 }
 
 #app {
     background-image: url(images/resizedriver-illustration.jpg);
+
 }
 
 #lvl2 {
@@ -227,6 +232,7 @@ input:focus::placeholder {
 
 
     #question {
+        z-index: 500;
         position: absolute;
         bottom: 2px;
     flex-direction: row;
@@ -237,6 +243,7 @@ input:focus::placeholder {
     }
 
     #questionbtn1, #checkBtn, #answer, #reply {
+    z-index: 600;
     text-align: center;
     flex: 1;
     height: 50%;
@@ -264,7 +271,7 @@ input:focus::placeholder {
     text-align: center;
 }
 
- 
+
 
    #answer {
     background-image: none;
@@ -273,10 +280,42 @@ input:focus::placeholder {
     font-size: 1.5em;
 }
 
-    #app, #lvl1, #lvl2 {
-    background-size: contain;       
+.item3 {
+    display: inline-block;
 }
+
+
+#instr p {
+    margin:200px 0 40px 0;
+    width: 26em;
+    padding: 10px 30px;
+    font-size: 14px;
+}
+#instr p strong {
+    font-size: 18px;
+}
+
+
+
+#startbtn, #startbtn2 {
+   
+    margin: 10px;
+    padding: 15px 40px;
+    font-size: 18px;
  
+}
+
+
+
+#title {
+    font-size: 5em;
+   
+}
+
+
+
+
+
   }
 
 
