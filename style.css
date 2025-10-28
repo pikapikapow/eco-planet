@@ -65,11 +65,6 @@ strong {
     line-height: 25px;
 }
 
-.item {
-    flex: 1;
-
-}
-
 
 
 #title {
@@ -80,7 +75,33 @@ strong {
    
 }
 
-#startbtn, #startbtn2, #backbtn, #backbtn2 {
+
+#topChart {
+   
+    position: absolute;
+    top: 0;
+    z-index: 27;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 50px;
+    width: 80%;
+    font-size: 20px;
+    font-weight: bold;
+    gap: 5px;
+    background-color: green;
+    text-align: center;
+}
+
+#backbtn, #counter, #treeCount {
+    color: white;
+    width: 33%;
+}
+
+
+#startbtn, #startbtn2 {
     margin: 30px;
     padding: 15px 40px;
     font-size: 24px;
@@ -91,21 +112,14 @@ strong {
     background-color: rgb(0, 109, 0);
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px rgba(143, 93, 0, 0.808);
 }
+
 
 #startbtn:hover {background-color: rgb(0, 80, 0);}
 
 #startbtn:active {
     background-color: rgb(0, 80, 0);
-    box-shadow: 0 9px rgba(104, 68, 0, 0.808);
     transform: translateY(4px);
-}
-
-#backbtn, #backbtn2 {
-    position: fixed;
-    left: 0;
-    z-index: 200;
 }
 
 
@@ -118,23 +132,7 @@ strong {
 }
 
 
-#counter, #counter1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    position: absolute;
-    top: 30px;
-    right: 21%;
-    width: 50px;
-    height: 30px;
-    color: white;
-    background-color: rgb(0, 109, 0);
-    /* text-align: center; */
-    gap: 5px;
-    border-radius: 3px;
-    z-index: 169;
-}
+
 
 
 
@@ -185,9 +183,7 @@ input:focus::placeholder {
     text-align: center;
 }
 /* 
-#result {
-    
-} */
+
 
 /* ::placeholder {
     color: #FFFFFF;
@@ -201,10 +197,6 @@ input:focus::placeholder {
     width: 100%;
     height: 100%;
 }
-/* #result {
-    height: 100%;
-    width: 100%;
-} */
 
 #treeContainer {
     display: flex;
@@ -223,20 +215,76 @@ input:focus::placeholder {
     height: 100%;
     width: 80%;
 }
-#treeCount, #fishCount  {
-    z-index: 200;
-    position: fixed;
-    left: 35%;
-    margin: 30px;
-    padding: 15px 40px;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: white;
-    background-color: rgb(0, 109, 0);
-    border: none;
-    border-radius: 15px;
+
+
+/* Phone orientation and screen*/
+
+ @media (min-width: 481px) and (max-width: 767px) {
+
+    #app, #lvl1, #lvl2 {
+    margin: 0;
+    background-image: url(images/field-illustration.jpeg);
+    height: 90%;
+    width: 100%;
+    background-size: cover;       
+    background-repeat: no-repeat; 
+    background-position: center;  
+   
 }
 
 
+    #question {
+        position: absolute;
+        bottom: 2px;
+    flex-direction: row;
+     width: 100%;
+     height: 30%;
+     align-items: end;
+    justify-content: end;
+    }
+
+    #questionbtn1, #checkBtn, #answer, #reply {
+    text-align: center;
+    flex: 1;
+    height: 50%;
+    margin: 0;
+    font-size: 1.2em;
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height: 10px;
+
+}
+    #topChart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    gap: 2px;
+    background-color: green;
+    text-align: center;
+}
+
+ 
+
+   #answer {
+    background-image: none;
+    background-color: beige;
+    color: black;
+    font-size: 1.5em;
+}
+ 
+  }
+
+
+
+  /* Tablet orientation and screen */
+    @media (min-width: 768px) and (max-width: 1024px) {
+     
+  }
