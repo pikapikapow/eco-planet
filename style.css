@@ -219,18 +219,11 @@ input:focus::placeholder {
 
 /* Phone orientation and screen*/
 
- @media (min-width: 481px) and (max-width: 767px) {
+ @media (min-width: 481px) and (max-width: 1024px) {
 
-    #app, #lvl1, #lvl2 {
-    margin: 0;
-    background-image: url(images/field-illustration.jpeg);
-    height: 90%;
-    width: 100%;
-    background-size: cover;       
-    background-repeat: no-repeat; 
-    background-position: center;  
-   
-}
+    #lvl1 {
+            background-image: url(images/resizedforest.jpg);
+    }
 
 
     #question {
@@ -279,6 +272,10 @@ input:focus::placeholder {
     color: black;
     font-size: 1.5em;
 }
+
+    #app, #lvl1, #lvl2 {
+    background-size: contain;       
+}
  
   }
 
@@ -286,5 +283,20 @@ input:focus::placeholder {
 
   /* Tablet orientation and screen */
     @media (min-width: 768px) and (max-width: 1024px) {
-     
+
+            #lvl1 {
+            background-image: url(images/field-illustration.jpeg);
+    }
+
+    #questionbtn1, #checkBtn {
+    font-size: 2em;
+}
+
+
+    #topChart {
+    
+    font-size: 18px;
+    
+}
+
   }
