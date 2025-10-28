@@ -305,6 +305,12 @@ input:focus::placeholder {
  
 }
 
+#fishContainer {
+    height: 60%;
+    width: 100%;
+    /* background-color: red; */
+}
+
 #treeContainer {
     display: flex;
     flex-wrap: wrap;

@@ -19,24 +19,75 @@ window.onload = function () {
   lvl2Snd.play();
 };
 
-function generateTrashOcean() {
-  for (let i = 0; i < 60; i++) {
-    const newTrash = document.createElement("i");
-    newTrash.classList.add("fa", "fa-solid", "fa-bottle-water");
-    newTrash.style.color = "#555555";
-    newTrash.style.fontSize = "30px";
-    newTrash.style.position = "absolute";
-    const containerWidth = window.innerWidth * 0.8;
-    const containerHeight = window.innerHeight * 0.3;
-    const randomX = Math.floor(Math.random() * (containerWidth - 70));
-    const randomY = Math.floor(Math.random() * (containerHeight - 70));
-    newTrash.style.left = randomX + "px";
-    newTrash.style.bottom = randomY + "px";
-    document.body.appendChild(newTrash);
+function handleResize() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  if (width < 768) {
+    // mobile layout
+
+    function generateTrashOcean() {
+      for (let i = 0; i < 60; i++) {
+        const newTrash = document.createElement("i");
+        newTrash.classList.add("fa", "fa-solid", "fa-bottle-water");
+        newTrash.style.color = "#555555";
+        newTrash.style.fontSize = "20px";
+        newTrash.style.position = "absolute";
+        const containerWidth = window.innerWidth * 1;
+        const containerHeight = window.innerHeight * 0.3;
+        const randomX = Math.floor(Math.random() * (containerWidth - 20));
+        const randomY = Math.floor(Math.random() * (containerHeight - 20));
+        newTrash.style.left = randomX + "px";
+        newTrash.style.bottom = randomY + 120 + "px";
+        document.body.appendChild(newTrash);
+      }
+    }
+    generateTrashOcean();
+    console.log("Small screen layout");
+  } else if (width >= 768 && width < 1024) {
+    // tablet layout
+    function generateTrashOcean() {
+      for (let i = 0; i < 60; i++) {
+        const newTrash = document.createElement("i");
+        newTrash.classList.add("fa", "fa-solid", "fa-bottle-water");
+        newTrash.style.color = "#555555";
+        newTrash.style.fontSize = "25px";
+        newTrash.style.position = "absolute";
+        const containerWidth = window.innerWidth * 1;
+        const containerHeight = window.innerHeight * 0.3;
+        const randomX = Math.floor(Math.random() * (containerWidth - 25));
+        const randomY = Math.floor(Math.random() * (containerHeight - 25));
+        newTrash.style.left = randomX + "px";
+        newTrash.style.bottom = randomY + 120 + "px";
+        document.body.appendChild(newTrash);
+      }
+    }
+    generateTrashOcean();
+  } else {
+    // Desktop layout
+    function generateTrashOcean() {
+      for (let i = 0; i < 60; i++) {
+        const newTrash = document.createElement("i");
+        newTrash.classList.add("fa", "fa-solid", "fa-bottle-water");
+        newTrash.style.color = "#555555";
+        newTrash.style.fontSize = "30px";
+        newTrash.style.position = "absolute";
+        const containerWidth = window.innerWidth * 0.8;
+        const containerHeight = window.innerHeight * 0.3;
+        const randomX = Math.floor(Math.random() * (containerWidth - 30));
+        const randomY = Math.floor(Math.random() * (containerHeight - 30));
+        newTrash.style.left = randomX + "px";
+        newTrash.style.bottom = randomY + "px";
+        document.body.appendChild(newTrash);
+      }
+    }
+    generateTrashOcean();
   }
 }
 
-generateTrashOcean();
+handleResize();
+
+window.addEventListener("click", handleResize());
 
 function generateProblem() {
   if (completeCheck === true) {
@@ -90,7 +141,7 @@ function checkAnswer() {
     }
     const newFish = document.createElement("i");
     newFish.classList.add("fa", "fa-solid", "fa-fish");
-    newFish.style.fontSize = "70px";
+    newFish.style.fontSize = "50px";
     let r = Math.random() * 255;
     let g = Math.random() * 255;
     let b = Math.random() * 255;
