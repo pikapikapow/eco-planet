@@ -81,7 +81,7 @@ strong {
 }
 
 
-#topChart {
+.topChart {
    
     position: absolute;
     top: 0;
@@ -100,7 +100,7 @@ strong {
     text-align: center;
 }
 
-#backbtn, #counter, #treeCount {
+#backbtn, #backbtn2, #counter,#counter1, #treeCount, #fishCount {
     color: white;
     width: 33%;
 }
@@ -257,7 +257,7 @@ input:focus::placeholder {
     line-height: 10px;
 
 }
-    #topChart {
+    .topChart {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -305,6 +305,17 @@ input:focus::placeholder {
  
 }
 
+#treeContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    position: fixed;
+    height: 25%;
+    width: 100%;
+    bottom: 15%;
+
+    }
+
 
 
 #title {
@@ -332,7 +343,7 @@ input:focus::placeholder {
 }
 
 
-    #topChart {
+    .topChart {
     
     font-size: 18px;
     
