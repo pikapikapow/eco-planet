@@ -3,9 +3,11 @@ const checkBtn = document.getElementById("checkBtn");
 const fishContain = document.getElementById("fishContainer");
 const fishCounter = document.getElementById("fishCount");
 const count = document.getElementById("countCorrect1");
+const close = document.getElementById("close2");
+const modal = document.getElementById("modal2");
 fishCounter.style.display = "none";
 let counter = 0;
-let fish = 0;
+let fish = 58;
 let lvl2Snd = new Audio("./sounds/ocean.mp3");
 let winSnd = new Audio("./sounds/cheersfx.mp3");
 let failSnd = new Audio("./sounds/failsfx.mp3");
@@ -171,9 +173,8 @@ function checkAnswer() {
     fishCounter.innerHTML = `Woah! You have bred ${fish} fish!`;
   }
   if (fish >= 60) {
-    window.alert(
-      "You have beaten this level! You can choose to go on, or do the next level!"
-    );
+    const modalShow = () => modal.classList.add("show-modal");
+    modalShow();
   }
 }
 
@@ -181,3 +182,11 @@ document
   .getElementById("questionbtn1")
   .addEventListener("click", generateProblem);
 document.getElementById("checkBtn").addEventListener("click", checkAnswer);
+
+if (close) {
+  close.addEventListener("click", () => modal.classList.remove("show-modal"));
+}
+
+close.addEventListener("click", function () {
+  window.location.href = "/index.html";
+});

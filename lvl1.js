@@ -3,8 +3,10 @@ const checkBtn = document.getElementById("checkBtn");
 const treeContain = document.getElementById("treeContainer");
 const treeCounter = document.getElementById("treeCount");
 const count = document.getElementById("countCorrect");
+const close = document.getElementById("close");
+const modal = document.getElementById("modal");
 treeCounter.style.display = "none";
-let trees = 0;
+let trees = 49;
 let counter = 0;
 let winSnd = new Audio("./sounds/cheersfx.mp3");
 let failSnd = new Audio("./sounds/failsfx.mp3");
@@ -165,9 +167,8 @@ function checkAnswer() {
     treeCounter.innerHTML = `Woah! You have planted ${trees} trees!`;
   }
   if (trees >= 50) {
-    alert(
-      "You have beaten this level! You can choose to go on, or do the next level!"
-    );
+    const modalShow = () => modal.classList.add("show-modal");
+    modalShow();
   }
 }
 
@@ -176,3 +177,11 @@ document
   .getElementById("questionbtn1")
   .addEventListener("click", generateProblem);
 document.getElementById("checkBtn").addEventListener("click", checkAnswer);
+
+if (close) {
+  close.addEventListener("click", () => modal.classList.remove("show-modal"));
+}
+
+close.addEventListener("click", function () {
+  window.location.href = "/index.html";
+});

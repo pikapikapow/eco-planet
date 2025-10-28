@@ -221,6 +221,60 @@ input:focus::placeholder {
     width: 80%;
 }
 
+/* Modal CSS */
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 15;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 400px;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 25px;
+  position: absolute;
+  top: 5px;
+  right: 12px;
+  cursor: pointer;
+}
+
+.modal-container .submit-btn {
+  padding: 10px 30px;
+  font-weight: bold;
+  background: crimson;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* JavaScript */
+.modal-container.show-modal {
+  display: block;
+}
+
 
 /* Phone orientation and screen*/
 
