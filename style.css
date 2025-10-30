@@ -31,8 +31,6 @@ strong {
     background-size: cover;       
     background-repeat: no-repeat; 
     background-position: center center;  
-  
-   
 }
 
 #lvl1 {
@@ -187,12 +185,7 @@ input:focus::placeholder {
     align-items: center;
     text-align: center;
 }
-/* 
 
-
-/* ::placeholder {
-    color: #FFFFFF;
-} */
 
 #questionbtn1 {
     font-size: 3em;
@@ -278,10 +271,10 @@ input:focus::placeholder {
 
 /* Phone orientation and screen*/
 
- @media (min-width: 481px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
 
     #lvl1 {
-            background-image: url(images/resizedforest.jpg);
+        background-image: url(images/resizedforest.jpg);
     }
 
 
@@ -289,124 +282,112 @@ input:focus::placeholder {
         z-index: 500;
         position: absolute;
         bottom: 2px;
-    flex-direction: row;
-     width: 100%;
-     height: 30%;
-     align-items: end;
-    justify-content: end;
+        flex-direction: row;
+        width: 100%;
+        height: 30%;
+        align-items: end;
+        justify-content: end;
     }
 
     #questionbtn1, #checkBtn, #answer, #reply {
-    z-index: 600;
-    text-align: center;
-    flex: 1;
-    height: 50%;
-    margin: 0;
-    font-size: 1.2em;
-    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
-    color: #FFFFFF;
-    cursor: pointer;
-    border: none;
-    font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
-    line-height: 10px;
+        z-index: 600;
+        text-align: center;
+        flex: 1;
+        height: 50%;
+        margin: 0;
+        font-size: 1.2em;
+        background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+        color: #FFFFFF;
+        cursor: pointer;
+        border: none;
+        font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+        line-height: 10px;
 
-}
+    }
+
     .topChart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    height: 50px;
-    width: 100%;
-    font-size: 12px;
-    font-weight: bold;
-    gap: 2px;
-    background-color: green;
-    text-align: center;
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        height: 50px;
+        width: 100%;
+        font-size: 12px;
+        font-weight: bold;
+        gap: 2px;
+        background-color: green;
+        text-align: center;
+    }
 
 
 
    #answer {
-    background-image: none;
-    background-color: beige;
-    color: black;
-    font-size: 1.5em;
-}
+        background-image: none;
+        background-color: beige;
+        color: black;
+        font-size: 1.5em;
+    }
 
-.item3 {
-    display: inline-block;
-}
-
-
-#instr p {
-    margin:200px 0 40px 0;
-    width: 26em;
-    padding: 10px 30px;
-    font-size: 14px;
-}
-#instr p strong {
-    font-size: 18px;
-}
-
-
-
-#startbtn, #startbtn2 {
-   
-    margin: 10px;
-    padding: 15px 40px;
-    font-size: 18px;
- 
-}
-
-#fishContainer {
-    height: 60%;
-    width: 100%;
-    /* background-color: red; */
-}
-
-#treeContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    position: fixed;
-    height: 25%;
-    width: 100%;
-    bottom: 15%;
-
+    .item3 {
+        display: inline-block;
     }
 
 
+    #instr p {
+        margin:200px 0 40px 0;
+        width: 26em;
+        padding: 10px 30px;
+        font-size: 14px;
+    }
 
-#title {
-    font-size: 5em;
-   
-}
+    #instr p strong {
+        font-size: 18px;
+        }
 
 
 
+    #startbtn, #startbtn2 {
+        margin: 10px;
+        padding: 15px 40px;
+        font-size: 18px;
+    }
 
+    #fishContainer {
+        height: 60%;
+        width: 100%;
+        /* background-color: red; */
+    }
 
-  }
+    #treeContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        position: fixed;
+        height: 25%;
+        width: 100%;
+        bottom: 15%;
+    }
+
+     #title {
+        font-size: 5em;
+    }
+
+    }
 
 
 
   /* Tablet orientation and screen */
     @media (min-width: 768px) and (max-width: 1024px) {
 
-            #lvl1 {
+        #lvl1 {
             background-image: url(images/field-illustration.jpeg);
+        }
+
+        #questionbtn1, #checkBtn {
+        font-size: 2em;
+        }
+
+        .topChart {
+            font-size: 18px;
+        }
     }
-
-    #questionbtn1, #checkBtn {
-    font-size: 2em;
-}
-
-
-    .topChart {
-    
-    font-size: 18px;
-    
-}
-
-  }
