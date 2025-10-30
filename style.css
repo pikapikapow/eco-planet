@@ -19,10 +19,6 @@ a {
     z-index: 100;
 }
 
-strong {
-    font-size: 25px;
-}
-
 
 #app, #lvl1, #lvl2 {
     margin: 0;
@@ -177,6 +173,7 @@ strong {
 
 input:focus::placeholder {
   color: transparent;
+  
 }
 
 #reply {
@@ -339,14 +336,11 @@ input:focus::placeholder {
     #instr p {
         margin: 160px 0 40px 0;
         width: 23em;
-        padding: 10px 30px;
+        padding: 20px 30px;
         font-size: 12px;
         line-height: 20px;
     }
 
-    #instr p strong {
-        font-size: 12px;
-        }
 
 
 
@@ -383,9 +377,33 @@ input:focus::placeholder {
   /* Tablet orientation and screen */
     @media (min-width: 768px) and (max-width: 1024px) {
 
+        input::placeholder {
+        font-size: 30px;
+        }
+
+
         #lvl1 {
             background-image: url(images/field-illustration.jpeg);
         }
+
+        #instr p {
+        margin: 160px 0 40px 0;
+        width: 23em;
+        padding: 40px 50px;
+        font-size: 22px;
+        line-height: 30px;
+
+    }
+
+    #title {
+        font-size: 6em;
+    }
+
+    #startbtn, #startbtn2 {
+        margin: 20px;
+        padding: 25px 50px;
+        font-size: 35px;
+    }
 
         #questionbtn1, #checkBtn {
         font-size: 2em;
