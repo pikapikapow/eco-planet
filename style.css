@@ -281,7 +281,7 @@ input:focus::placeholder {
 
     #question {
         z-index: 500;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         flex-direction: row;
         width: 100%;
