@@ -165,7 +165,7 @@ function checkAnswer() {
     questionbtn1.innerHTML = `Next`;
     completeCheck = true;
   } else {
-    result.innerHTML = `Incorrect. <br> ${num1} ${op} ${num2} equals ${correctAnswer}.`;
+    result.innerHTML = `Try again!`;
     failSnd.play();
     questionbtn1.innerHTML = `Next`;
     completeCheck = true;
