@@ -157,7 +157,7 @@ function checkAnswer() {
     trees++;
     questionbtn1.innerHTML = `Next`;
   } else {
-    result.innerHTML = `Incorrect. <br> ${num1} ${op} ${num2} equals ${correctAnswer}.`;
+    result.innerHTML = `Try again! <br>`;
     failSnd.play();
     questionbtn1.innerHTML = `Next`;
   }
