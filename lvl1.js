@@ -121,9 +121,7 @@ function generateProblem() {
   if (op === "+") correctAnswer = num1 + num2;
   else if (op === "-") correctAnswer = num1 - num2;
 
-  document.getElementById(
-    "questionbtn1"
-  ).textContent = `${num1} ${op} ${num2} = ?`;
+  document.getElementById("questionbtn1").textContent = `${num1} ${op} ${num2}`;
   document.getElementById("result").textContent = "";
   document.getElementById("answer").value = "";
 }
@@ -157,11 +155,11 @@ function checkAnswer() {
     newTree.style.color = "#0b5232ff";
     treeContain.appendChild(newTree);
     trees++;
-    questionbtn1.innerHTML = `Next?`;
+    questionbtn1.innerHTML = `Next`;
   } else {
     result.innerHTML = `Incorrect. <br> ${num1} ${op} ${num2} equals ${correctAnswer}.`;
     failSnd.play();
-    questionbtn1.innerHTML = `Next?`;
+    questionbtn1.innerHTML = `Next`;
   }
   treeCounter.style.display = "block";
   if (trees === 1) {

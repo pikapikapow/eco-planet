@@ -115,7 +115,7 @@ function generateProblem() {
 
     document.getElementById(
       "questionbtn1"
-    ).textContent = `${num1} ${op} ${num2} = ?`;
+    ).textContent = `${num1} ${op} ${num2}`;
     document.getElementById("result").textContent = "";
     document.getElementById("answer").value = "";
     completeCheck = false;
@@ -162,12 +162,12 @@ function checkAnswer() {
     newFish.style.top = randomY + "px";
     document.body.appendChild(newFish);
     fish++;
-    questionbtn1.innerHTML = `Next?`;
+    questionbtn1.innerHTML = `Next`;
     completeCheck = true;
   } else {
     result.innerHTML = `Incorrect. <br> ${num1} ${op} ${num2} equals ${correctAnswer}.`;
     failSnd.play();
-    questionbtn1.innerHTML = `Next?`;
+    questionbtn1.innerHTML = `Next`;
     completeCheck = true;
   }
   fishCounter.style.display = "block";
