@@ -6,6 +6,7 @@ const count = document.getElementById("countCorrect");
 const close = document.getElementById("close");
 const modal = document.getElementById("modal");
 treeCounter.style.display = "none";
+let testMode = true;
 let trees = 0;
 let counter = 0;
 let winSnd = new Audio("./sounds/cheersfx.mp3");
@@ -89,11 +90,11 @@ function handleResize() {
         newPollution.style.borderRadius = "50%";
         newPollution.style.border = "1px solid black";
         const containerWidth = window.innerWidth * 0.8;
-        const containerHeight = window.innerHeight * 0.3;
+        const containerHeight = window.innerHeight * 0.25;
         const randomX = Math.floor(Math.random() * (containerWidth - 70));
-        const randomY = Math.floor(Math.random() * (containerHeight - 70));
+        const randomY = Math.floor(Math.random() * containerHeight);
         newPollution.style.left = randomX + "px";
-        newPollution.style.top = randomY + "px";
+        newPollution.style.top = randomY + 50 + "px";
         pollutionCounter++;
 
         document.body.appendChild(newPollution);
@@ -102,10 +103,6 @@ function handleResize() {
     generatePollution();
   }
 }
-
-handleResize();
-
-window.addEventListener("click", handleResize());
 
 console.log(pollutionCounter);
 
@@ -124,6 +121,15 @@ function generateProblem() {
   document.getElementById("questionbtn1").textContent = `${num1} ${op} ${num2}`;
   document.getElementById("result").textContent = "";
   document.getElementById("answer").value = "";
+}
+
+function generateTree() {
+  const newTree = document.createElement("i");
+  newTree.classList.add("fa", "fa-solid", "fa-tree");
+  newTree.style.fontSize = "50px";
+  newTree.style.color = "#0b5232ff";
+  treeContain.appendChild(newTree);
+  trees++;
 }
 
 function checkAnswer() {
@@ -149,12 +155,7 @@ function checkAnswer() {
         console.log(pollutionCounter);
       }, 1000);
     }
-    const newTree = document.createElement("i");
-    newTree.classList.add("fa", "fa-solid", "fa-tree");
-    newTree.style.fontSize = "40px";
-    newTree.style.color = "#0b5232ff";
-    treeContain.appendChild(newTree);
-    trees++;
+    generateTree();
     questionbtn1.innerHTML = `Next`;
   } else {
     result.innerHTML = `Try again! <br>`;
@@ -170,6 +171,14 @@ function checkAnswer() {
   if (trees >= 50) {
     const modalShow = () => modal.classList.add("show-modal");
     modalShow();
+  }
+}
+
+if (!testMode) {
+  window.addEventListener("click", handleResize());
+} else {
+  for (let i = 0; i < 50; i++) {
+    generateTree();
   }
 }
 

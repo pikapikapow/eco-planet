@@ -6,6 +6,7 @@ const count = document.getElementById("countCorrect1");
 const close = document.getElementById("close2");
 const modal = document.getElementById("modal2");
 fishCounter.style.display = "none";
+let testMode = true;
 let counter = 0;
 let fish = 0;
 let lvl2Snd = new Audio("./sounds/ocean.mp3");
@@ -87,25 +88,47 @@ function handleResize() {
   }
 }
 
-handleResize();
-
-window.addEventListener("click", handleResize());
+function generateFish() {
+  const newFish = document.createElement("i");
+  newFish.classList.add("fa", "fa-solid", "fa-fish");
+  newFish.style.fontSize = "50px";
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+  let rgbColorString = `rgb(${r}, ${g}, ${b})`;
+  newFish.style.color = rgbColorString;
+  newFish.style.position = "absolute";
+  const containerWidth = window.innerWidth * 0.8;
+  const containerHeight = window.innerHeight * 0.7;
+  const randomX = Math.floor(Math.random() * (containerWidth - 70));
+  const randomY = Math.floor(Math.random() * (containerHeight - 70));
+  newFish.style.left = randomX + "px";
+  newFish.style.top = randomY + "px";
+  document.body.appendChild(newFish);
+  fish++;
+}
 
 function generateProblem() {
   if (completeCheck === true) {
     num1 = Math.floor(Math.random() * 100) + 1;
-    num2 = Math.floor(Math.random() * 20) + 1;
+    num2 = Math.floor(Math.random() * 100) + 1;
     const operators = ["+", "-", "*", "/"];
     op = operators[Math.floor(Math.random() * operators.length)];
-    if (num1 < num2) {
-      generateProblem();
-    }
 
     checkBtn.style.display = "block";
     if (op === "+") correctAnswer = num1 + num2;
-    else if (op === "-") correctAnswer = num1 - num2;
-    else if (op === "*") correctAnswer = num1 * num2;
-    else if (op === "/") {
+    else if (op === "-") {
+      if (num1 < num2) {
+        generateProblem();
+      } else {
+        correctAnswer = num1 - num2;
+      }
+    } else if (op === "*") {
+      if (num1 > 10 && num2 > 10) {
+        num2 = Math.ceil(num2 / 10);
+        correctAnswer = num1 * num2;
+      }
+    } else if (op === "/") {
       if (num1 % num2 != 0) {
         generateProblem();
       } else {
@@ -145,23 +168,7 @@ function checkAnswer() {
         trashToDelete.remove();
       }, 1000);
     }
-    const newFish = document.createElement("i");
-    newFish.classList.add("fa", "fa-solid", "fa-fish");
-    newFish.style.fontSize = "50px";
-    let r = Math.random() * 255;
-    let g = Math.random() * 255;
-    let b = Math.random() * 255;
-    let rgbColorString = `rgb(${r}, ${g}, ${b})`;
-    newFish.style.color = rgbColorString;
-    newFish.style.position = "absolute";
-    const containerWidth = window.innerWidth * 0.8;
-    const containerHeight = window.innerHeight * 0.7;
-    const randomX = Math.floor(Math.random() * (containerWidth - 70));
-    const randomY = Math.floor(Math.random() * (containerHeight - 70));
-    newFish.style.left = randomX + "px";
-    newFish.style.top = randomY + "px";
-    document.body.appendChild(newFish);
-    fish++;
+    generateFish();
     questionbtn1.innerHTML = `Next`;
     completeCheck = true;
   } else {
@@ -179,6 +186,14 @@ function checkAnswer() {
   if (fish >= 60) {
     const modalShow = () => modal.classList.add("show-modal");
     modalShow();
+  }
+}
+
+if (!testMode) {
+  window.addEventListener("click", handleResize());
+} else {
+  for (let i = 0; i < 60; i++) {
+    generateFish();
   }
 }
 
