@@ -30,7 +30,7 @@ function handleResize() {
   if (width < 768) {
     // mobile layout
     function generatePollution() {
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 40; i++) {
         const newPollution = document.createElement("div");
         newPollution.style.background = "#8b8b8bb4";
         newPollution.classList.add("pollution");
@@ -57,7 +57,7 @@ function handleResize() {
   } else if (width >= 768 && width < 1024) {
     function generatePollution() {
       // Tablet layout
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 40; i++) {
         const newPollution = document.createElement("div");
         newPollution.style.background = "#8b8b8bb4";
         newPollution.classList.add("pollution");
@@ -155,6 +155,8 @@ function checkAnswer() {
   checkBtn.style.display = "none";
   const userAnswer = Number(document.getElementById("answer").value);
   const result = document.getElementById("result");
+  const pollution = document.querySelectorAll(".pollution");
+
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
     winSnd.play();
@@ -162,9 +164,9 @@ function checkAnswer() {
     count.innerHTML = counter;
     let randomPollution = Math.floor(Math.random() * pollutionCounter);
     let pollutionToDelete = pollution[randomPollution];
-    if (pollutionCounter === 0) {
-      alert("Congrats! All the pollution has disappeared!");
-      generateBird;
+    if (pollution.length === 0) {
+      // alert("Congrats! All the pollution has disappeared!");
+      generateBird();
     } else {
       pollutionToDelete.style.background = "red";
       setTimeout(() => {
@@ -203,6 +205,7 @@ if (!testMode) {
   }
 }
 
+questionbtn1.addEventListener("click", () => console.log("test"));
 document
   .getElementById("questionbtn1")
   .addEventListener("click", generateProblem);
