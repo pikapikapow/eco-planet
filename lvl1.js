@@ -6,7 +6,7 @@ const count = document.getElementById("countCorrect");
 const close = document.getElementById("close");
 const modal = document.getElementById("modal");
 treeCounter.style.display = "none";
-let testMode = true;
+let testMode = false;
 let trees = 0;
 let counter = 0;
 let winSnd = new Audio("./sounds/cheersfx.mp3");
@@ -80,7 +80,7 @@ function handleResize() {
     generatePollution();
   } else {
     function generatePollution() {
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 40; i++) {
         const newPollution = document.createElement("div");
         newPollution.style.background = "#8b8b8bb4";
         newPollution.classList.add("pollution");
@@ -123,6 +123,25 @@ function generateProblem() {
   document.getElementById("answer").value = "";
 }
 
+function generateBird() {
+  const newBird = document.createElement("i");
+  newBird.classList.add("fa", "fa-solid", "fa-dove");
+  newBird.style.fontSize = "50px";
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+  let rgbColorString = `rgb(${r}, ${g}, ${b})`;
+  newBird.style.color = rgbColorString;
+  newBird.style.position = "absolute";
+  const containerWidth = window.innerWidth * 0.8;
+  const containerHeight = window.innerHeight * 0.3;
+  const randomX = Math.floor(Math.random() * (containerWidth - 50));
+  const randomY = Math.floor(Math.random() * (containerHeight - 50));
+  newBird.style.left = randomX + "px";
+  newBird.style.top = randomY + 40 + "px";
+  document.body.appendChild(newBird);
+}
+
 function generateTree() {
   const newTree = document.createElement("i");
   newTree.classList.add("fa", "fa-solid", "fa-tree");
@@ -136,8 +155,6 @@ function checkAnswer() {
   checkBtn.style.display = "none";
   const userAnswer = Number(document.getElementById("answer").value);
   const result = document.getElementById("result");
-  const pollution = document.querySelectorAll(".pollution");
-
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
     winSnd.play();
@@ -145,8 +162,9 @@ function checkAnswer() {
     count.innerHTML = counter;
     let randomPollution = Math.floor(Math.random() * pollutionCounter);
     let pollutionToDelete = pollution[randomPollution];
-    if (pollution.length === 0) {
+    if (pollutionCounter === 0) {
       alert("Congrats! All the pollution has disappeared!");
+      generateBird;
     } else {
       pollutionToDelete.style.background = "red";
       setTimeout(() => {
@@ -180,9 +198,11 @@ if (!testMode) {
   for (let i = 0; i < 50; i++) {
     generateTree();
   }
+  for (let i = 0; i < 10; i++) {
+    generateBird();
+  }
 }
 
-questionbtn1.addEventListener("click", () => console.log("test"));
 document
   .getElementById("questionbtn1")
   .addEventListener("click", generateProblem);

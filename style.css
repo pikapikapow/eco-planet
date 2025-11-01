@@ -198,7 +198,6 @@ input:focus::placeholder {
 #treeContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     gap: 20px;
     position: fixed;
     height: 25%;
