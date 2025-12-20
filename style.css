@@ -51,7 +51,7 @@ a {
 
 
 
-#instr p {
+#instr {
     margin: 20px;
     width: 46em;
     padding: 30px 50px;
@@ -64,7 +64,20 @@ a {
     line-height: 30px;
 }
 
+.credit {
+    color: white;
+    position: absolute;
+    background-color: #d05b21;
+    padding: 15px;
+    top: 92%;
+    border-radius: 5px;
+}
 
+.ingame {
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 #title {
     font-size: 100px;
@@ -196,6 +209,7 @@ input:focus::placeholder {
 }
 
 #treeContainer {
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;

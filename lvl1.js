@@ -6,22 +6,20 @@ const count = document.getElementById("countCorrect");
 const close = document.getElementById("close");
 const modal = document.getElementById("modal");
 treeCounter.style.display = "none";
-let testMode = true;
+let testMode = false;
 let trees = 0;
-let counter = 0;
 let winSnd = new Audio("./sounds/cheersfx.mp3");
 let failSnd = new Audio("./sounds/failsfx.mp3");
 let lvl1Snd = new Audio("./sounds/forest.mp3");
-
 let correctAnswer;
 let num1;
 let num2;
 let op;
 let pollutionCounter = 0;
 
-window.onload = function () {
-  lvl1Snd.play();
-};
+// window.onload = function () {
+//   lvl1Snd.play();
+// };
 
 function handleResize() {
   const width = window.innerWidth;
@@ -29,78 +27,69 @@ function handleResize() {
 
   if (width < 768) {
     // mobile layout
-    function generatePollution() {
-      for (let i = 0; i < 40; i++) {
-        const newPollution = document.createElement("div");
-        newPollution.style.background = "#8b8b8bb4";
-        newPollution.classList.add("pollution");
-        newPollution.style.width = "25px";
-        newPollution.style.height = "25px";
-        newPollution.style.position = "absolute";
-        newPollution.style.borderRadius = "50%";
-        newPollution.style.border = "1px solid black";
-        const containerWidth = window.innerWidth * 1;
-        const containerHeight = window.innerHeight * 0.3;
-        const randomX = Math.floor(Math.random() * (containerWidth - 25));
-        const randomY = Math.floor(Math.random() * (containerHeight - 25));
-        newPollution.style.left = randomX + "px";
-        newPollution.style.top = randomY + "px";
-        pollutionCounter++;
 
-        document.body.appendChild(newPollution);
-      }
+    for (let i = 0; i < 40; i++) {
+      const newPollution = document.createElement("div");
+      newPollution.style.background = "#8b8b8bb4";
+      newPollution.classList.add("pollution");
+      newPollution.style.width = "25px";
+      newPollution.style.height = "25px";
+      newPollution.style.position = "absolute";
+      newPollution.style.borderRadius = "50%";
+      newPollution.style.border = "1px solid black";
+      const containerWidth = window.innerWidth * 1;
+      const containerHeight = window.innerHeight * 0.3;
+      const randomX = Math.floor(Math.random() * (containerWidth - 25));
+      const randomY = Math.floor(Math.random() * (containerHeight - 25));
+      newPollution.style.left = randomX + "px";
+      newPollution.style.top = randomY + "px";
+      pollutionCounter++;
+
+      document.body.appendChild(newPollution);
     }
-
-    generatePollution();
 
     console.log("Small screen layout");
   } else if (width >= 768 && width < 1024) {
-    function generatePollution() {
-      // Tablet layout
-      for (let i = 0; i < 40; i++) {
-        const newPollution = document.createElement("div");
-        newPollution.style.background = "#8b8b8bb4";
-        newPollution.classList.add("pollution");
-        newPollution.style.width = "40px";
-        newPollution.style.height = "40px";
-        newPollution.style.position = "absolute";
-        newPollution.style.borderRadius = "50%";
-        newPollution.style.border = "1px solid black";
-        const containerWidth = window.innerWidth * 1;
-        const containerHeight = window.innerHeight * 0.3;
-        const randomX = Math.floor(Math.random() * (containerWidth - 40));
-        const randomY = Math.floor(Math.random() * (containerHeight - 40));
-        newPollution.style.left = randomX + "px";
-        newPollution.style.top = randomY + "px";
-        pollutionCounter++;
+    // Tablet layout
+    for (let i = 0; i < 40; i++) {
+      const newPollution = document.createElement("div");
+      newPollution.style.background = "#8b8b8bb4";
+      newPollution.classList.add("pollution");
+      newPollution.style.width = "40px";
+      newPollution.style.height = "40px";
+      newPollution.style.position = "absolute";
+      newPollution.style.borderRadius = "50%";
+      newPollution.style.border = "1px solid black";
+      const containerWidth = window.innerWidth * 1;
+      const containerHeight = window.innerHeight * 0.3;
+      const randomX = Math.floor(Math.random() * (containerWidth - 40));
+      const randomY = Math.floor(Math.random() * (containerHeight - 40));
+      newPollution.style.left = randomX + "px";
+      newPollution.style.top = randomY + "px";
+      pollutionCounter++;
 
-        document.body.appendChild(newPollution);
-      }
+      document.body.appendChild(newPollution);
     }
-    generatePollution();
   } else {
-    function generatePollution() {
-      for (let i = 0; i < 40; i++) {
-        const newPollution = document.createElement("div");
-        newPollution.style.background = "#8b8b8bb4";
-        newPollution.classList.add("pollution");
-        newPollution.style.width = "70px";
-        newPollution.style.height = "70px";
-        newPollution.style.position = "absolute";
-        newPollution.style.borderRadius = "50%";
-        newPollution.style.border = "1px solid black";
-        const containerWidth = window.innerWidth * 0.8;
-        const containerHeight = window.innerHeight * 0.25;
-        const randomX = Math.floor(Math.random() * (containerWidth - 70));
-        const randomY = Math.floor(Math.random() * containerHeight);
-        newPollution.style.left = randomX + "px";
-        newPollution.style.top = randomY + 50 + "px";
-        pollutionCounter++;
+    for (let i = 0; i < 40; i++) {
+      const newPollution = document.createElement("div");
+      newPollution.style.background = "#8b8b8bb4";
+      newPollution.classList.add("pollution");
+      newPollution.style.width = "70px";
+      newPollution.style.height = "70px";
+      newPollution.style.position = "absolute";
+      newPollution.style.borderRadius = "50%";
+      newPollution.style.border = "1px solid black";
+      const containerWidth = window.innerWidth * 0.8;
+      const containerHeight = window.innerHeight * 0.25;
+      const randomX = Math.floor(Math.random() * (containerWidth - 70));
+      const randomY = Math.floor(Math.random() * containerHeight);
+      newPollution.style.left = randomX + "px";
+      newPollution.style.top = randomY + 50 + "px";
+      pollutionCounter++;
 
-        document.body.appendChild(newPollution);
-      }
+      document.body.appendChild(newPollution);
     }
-    generatePollution();
   }
 }
 
@@ -149,6 +138,7 @@ function generateTree() {
   newTree.style.color = "#0b5232ff";
   treeContain.appendChild(newTree);
   trees++;
+  count.innerHTML = trees;
 }
 
 function checkAnswer() {
@@ -160,8 +150,7 @@ function checkAnswer() {
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
     winSnd.play();
-    counter++;
-    count.innerHTML = counter;
+
     let randomPollution = Math.floor(Math.random() * pollutionCounter);
     let pollutionToDelete = pollution[randomPollution];
     if (pollution.length === 0) {

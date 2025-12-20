@@ -7,7 +7,6 @@ const close = document.getElementById("close2");
 const modal = document.getElementById("modal2");
 fishCounter.style.display = "none";
 let testMode = false;
-let counter = 0;
 let fish = 0;
 let lvl2Snd = new Audio("./sounds/ocean.mp3");
 let winSnd = new Audio("./sounds/cheersfx.mp3");
@@ -18,9 +17,9 @@ let num2;
 let op;
 let completeCheck = true;
 
-window.onload = function () {
-  lvl2Snd.play();
-};
+// window.onload = function () {
+//   lvl2Snd.play();
+// };
 
 function handleResize() {
   const width = window.innerWidth;
@@ -156,8 +155,7 @@ function checkAnswer() {
   if (userAnswer === correctAnswer) {
     result.textContent = `Correct!`;
     winSnd.play();
-    counter++;
-    count.innerHTML = counter;
+    count.innerHTML = fish;
     const randomTrash = Math.floor(Math.random() * trash.length);
     let trashToDelete = trash[randomTrash];
     if (trash.length === 0) {
