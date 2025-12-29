@@ -71,6 +71,7 @@ a {
     padding: 15px;
     top: 92%;
     border-radius: 5px;
+    z-index: 50;
 }
 
 .ingame {
