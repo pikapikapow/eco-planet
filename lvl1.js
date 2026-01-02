@@ -23,20 +23,18 @@ let pollutionCounter = 0;
 
 function handleResize() {
   const width = window.innerWidth;
-  const height = window.innerHeight;
 
-  if (width < 768) {
-    // mobile layout
-
-    for (let i = 0; i < 40; i++) {
-      const newPollution = document.createElement("div");
-      newPollution.style.background = "#8b8b8bb4";
-      newPollution.classList.add("pollution");
+  for (let i = 0; i < 40; i++) {
+    const newPollution = document.createElement("div");
+    newPollution.style.background = "#8b8b8bb4";
+    newPollution.classList.add("pollution");
+    newPollution.style.position = "absolute";
+    newPollution.style.borderRadius = "50%";
+    newPollution.style.border = "1px solid black";
+    if (width < 768) {
+      // mobile layout
       newPollution.style.width = "25px";
       newPollution.style.height = "25px";
-      newPollution.style.position = "absolute";
-      newPollution.style.borderRadius = "50%";
-      newPollution.style.border = "1px solid black";
       const containerWidth = window.innerWidth * 1;
       const containerHeight = window.innerHeight * 0.3;
       const randomX = Math.floor(Math.random() * (containerWidth - 25));
@@ -44,22 +42,11 @@ function handleResize() {
       newPollution.style.left = randomX + "px";
       newPollution.style.top = randomY + "px";
       pollutionCounter++;
-
       document.body.appendChild(newPollution);
-    }
-
-    console.log("Small screen layout");
-  } else if (width >= 768 && width < 1024) {
-    // Tablet layout
-    for (let i = 0; i < 40; i++) {
-      const newPollution = document.createElement("div");
-      newPollution.style.background = "#8b8b8bb4";
-      newPollution.classList.add("pollution");
+    } else if (width >= 768 && width < 1024) {
+      // tablet and small screen layout
       newPollution.style.width = "40px";
       newPollution.style.height = "40px";
-      newPollution.style.position = "absolute";
-      newPollution.style.borderRadius = "50%";
-      newPollution.style.border = "1px solid black";
       const containerWidth = window.innerWidth * 1;
       const containerHeight = window.innerHeight * 0.3;
       const randomX = Math.floor(Math.random() * (containerWidth - 40));
@@ -67,19 +54,11 @@ function handleResize() {
       newPollution.style.left = randomX + "px";
       newPollution.style.top = randomY + "px";
       pollutionCounter++;
-
       document.body.appendChild(newPollution);
-    }
-  } else {
-    for (let i = 0; i < 40; i++) {
-      const newPollution = document.createElement("div");
-      newPollution.style.background = "#8b8b8bb4";
-      newPollution.classList.add("pollution");
+    } else {
+      // desktop layout
       newPollution.style.width = "70px";
       newPollution.style.height = "70px";
-      newPollution.style.position = "absolute";
-      newPollution.style.borderRadius = "50%";
-      newPollution.style.border = "1px solid black";
       const containerWidth = window.innerWidth * 0.8;
       const containerHeight = window.innerHeight * 0.25;
       const randomX = Math.floor(Math.random() * (containerWidth - 70));
@@ -87,7 +66,6 @@ function handleResize() {
       newPollution.style.left = randomX + "px";
       newPollution.style.top = randomY + 50 + "px";
       pollutionCounter++;
-
       document.body.appendChild(newPollution);
     }
   }
