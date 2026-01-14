@@ -6,7 +6,7 @@ const count = document.getElementById("countCorrect1");
 const close = document.getElementById("close2");
 const modal = document.getElementById("modal2");
 fishCounter.style.display = "none";
-let testMode = false;
+let testMode = true;
 let fish = 0;
 let lvl2Snd = new Audio("./sounds/ocean.mp3");
 let winSnd = new Audio("./sounds/cheersfx.mp3");
@@ -127,9 +127,7 @@ function checkAnswer() {
     count.innerHTML = fish;
     const randomTrash = Math.floor(Math.random() * trash.length);
     let trashToDelete = trash[randomTrash];
-    if (trash.length === 0) {
-      alert("Congrats! All the trash has disappeared!");
-    } else {
+    if (trash.length > 0) {
       trashToDelete.style.color = "red";
       setTimeout(() => {
         trashToDelete.remove();

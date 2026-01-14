@@ -65,13 +65,11 @@ a {
 }
 
 .credit {
-    color: white;
     position: absolute;
-    background-color: #d05b21;
-    padding: 15px;
-    top: 92%;
-    border-radius: 5px;
-    z-index: 50;
+    bottom: 5px;
+    right: 5px;
+    color: white;
+    font-weight: bold;
 }
 
 .ingame {
@@ -285,7 +283,7 @@ input:focus::placeholder {
 
 /* Phone orientation and screen*/
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
 
     
 
@@ -317,6 +315,10 @@ input:focus::placeholder {
         color: #FFFFFF;
         cursor: pointer;
         border: none;
+    }
+
+    .credit {
+        font-size: 10px;
     }
 
 
@@ -407,14 +409,24 @@ input:focus::placeholder {
             background-image: url(images/field-illustration.jpeg);
         }
 
-        #instr p {
+         /* #instr p {
         margin: 160px 0 40px 0;
         width: 23em;
-        padding: 40px 50px;
-        font-size: 22px;
-        line-height: 30px;
+        padding: 20px 30px;
+        font-size: 12px;
+        line-height: 20px;
+    } */
 
-    }
+    #instr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 200px;
+    padding: 20px 30px;
+    font-size: 15px;
+    line-height: 20px;
+}
 
     #title {
         font-size: 6em;
