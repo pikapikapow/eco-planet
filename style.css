@@ -356,14 +356,24 @@ input:focus::placeholder {
     }
 
 
-    #instr p {
-        margin: 160px 0 40px 0;
+    /* #instr p {
+        margin: 20px 0 40px 0;
         width: 23em;
         padding: 20px 30px;
         font-size: 12px;
         line-height: 20px;
-    }
+    } */
 
+     #instr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 200px;
+    padding: 40px 30px;
+    font-size: 12px;
+    line-height: 20px;
+}
 
 
 
